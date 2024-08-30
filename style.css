@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center; 
+    min-height: 100vh; 
+    background: #343F4F;
+}
+
+.parent {
+    max-width: 1200px;
+    position: relative;
+}
+
+.parent i {
+    top: 50%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 46px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.parent i:first-child{
+    left: -23px;
+    display: none;
+}
+
+.parent i:last-child{
+    right: -23px;
+}
+
+.parent .images{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.images.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.images.dragging img{
+    pointer-events: none;
+}
+
+.images img{
+    height: 340px;  
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100% / 3);
+}
+
+.images img:first-child{
+    margin-left: 0px;
+    
+}
+
+@media screen and (max-width: 900px) {
+    .images img{
+    width: calc(100% / 2);}
+}
+    
+@media screen and (max-width: 550px) {
+    .images img{
+    width: 100%;}
+}
